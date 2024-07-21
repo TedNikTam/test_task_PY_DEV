@@ -27,12 +27,6 @@ def get_weather(city, open_weather_token):
 def index(request):
     return render(request, "index.html")
 
-def postuser(request):
-    # получаем из данных запроса POST отправленные через форму данные(имя и возраст)
-    name = request.POST.get("name", "Undefined")
-    age = request.POST.get("age", 1)
-    return HttpResponse(f"<h2>Name: {name}  Age: {age}</h2>")
-
 def city_place(request):
     # получаем из данных запроса POST отправленные через форму данные(название города)
     city = request.POST.get("city", "Undefined")
