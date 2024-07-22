@@ -21,6 +21,5 @@ from app_1 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path("postuser/", views.postuser),
     path("city/", views.city_place),
 ]

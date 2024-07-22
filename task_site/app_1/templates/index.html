@@ -6,13 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>User form</h2>
-    <form method="post" action="postuser/">
-        {% csrf_token %}
-        <p>Name:<br> <input name="name" /></p>
-        <p>Age:<br> <input name="age" type="number" /></p>
-        <input type="submit" value="Send" />
-    </form>
+    <h2>Temperature form</h2>
     <form method="post" action="city/">
         {% csrf_token %}
         <p>City:<br> <input name="city" /></p>

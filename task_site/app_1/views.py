@@ -32,6 +32,11 @@ def city_place(request):
     city = request.POST.get("city", "Undefined")
     data = get_weather(city, open_weather_token)
     if data['status'] == 'OK':
-        return HttpResponse(f"<h2> {data['data']} </h2>")
+        print(data['data']['main'])
+        g_data = data['data']['main']['temp']
+        print(f'Город : {city} \nТемпература: {g_data}')
+        # return HttpResponse(f"<h2> {data['data']['main']} </h2>")
+        return HttpResponse(f"<h2>Город : {city} <br> Температура: {g_data} °C</h2>")
+
     else:
         return HttpResponse(f"<h2> ERROR: {data['data']} </h2>")
