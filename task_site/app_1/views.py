@@ -38,8 +38,13 @@ def city_place(request):
         temp_max_data = data['data']['main']['temp_max']
         temp_min_data = data['data']['main']['temp_min']
         pressure_data = data['data']['main']['pressure']
-        print(f'Город: {city} \nТемпература: {temp_data}°C \nОщущается как: {feels_like_data}°C \nМаксимальная температура: {temp_max_data}°C \nМинимальная температура: {temp_min_data}°C \nДавление: {pressure_data} мм рт. ст.')
+        print(f'Город: {city} \nТемпература: {temp_data}°C \nОщущается как: {feels_like_data}°C \nМаксимальная температура: {temp_max_data}°C \nМинимальная температура: {temp_min_data}°C\nДавление: {pressure_data} мм рт. ст.')
         # return HttpResponse(f"<h2> {data['data']['main']} </h2>")
-        return HttpResponse(f"<h2>Город : {city} <br> Температура: {temp_data}°C <br> Ощущается как: {feels_like_data}°C <br>Максимальная температура: {temp_max_data}°C <br> Минимальная температура: {temp_min_data}°C <br> \nДавление: {pressure_data} мм рт. ст.</h2>")
+        return HttpResponse(f'''<h2>Город : {city} <br> 
+                            Температура: {temp_data}°C <br> 
+                            Ощущается как: {feels_like_data}°C <br>
+                            Максимальная температура: {temp_max_data}°C <br> 
+                            Минимальная температура: {temp_min_data}°C <br> 
+                            Давление: {pressure_data} мм рт. ст.</h2>''')
     else:
         return HttpResponse(f"<h2> ERROR: {data['data']} </h2>")
